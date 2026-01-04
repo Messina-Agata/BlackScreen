@@ -1,6 +1,6 @@
 use pixels::{Error, Pixels, SurfaceTexture};
 use winit::{
-    event::{Event, WindowEvent},
+    event::{Event, WindowEvent, VirtualKeyCode},
     event_loop::{ControlFlow, EventLoop},
     window::{WindowBuilder, Fullscreen},
 };
@@ -35,6 +35,11 @@ fn main() -> Result<(), Error> {
             Event::WindowEvent { event, .. } => match event {
                 WindowEvent::CloseRequested | WindowEvent::MouseInput { .. } => {
                     *control_flow = ControlFlow::Exit;
+                }
+                WindowEvent::KeyboardInput { input, .. } => {
+                    if let Some(VirtualKeyCode::Escape) = input.virtual_keycode {
+                        *control_flow = ControlFlow::Exit;
+                    }
                 }
                 _ => {}
             },

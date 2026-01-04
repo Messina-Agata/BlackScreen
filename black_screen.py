@@ -13,6 +13,7 @@ def crea_schermo(monitor):
     root.focus_force()
     # Chiudi al click
     root.bind("<Button-1>", lambda e: main.destroy())
+    root.bind("<Escape>", lambda e: main.destroy())
     return root
 
 # finestra principale invisibile

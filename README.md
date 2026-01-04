@@ -1,4 +1,4 @@
-This program opens a fullscreen window on every monitor and fills it entirely with black. All screens remain black until the user clicks, at which point the program closes and normal display is restored.
+This program opens a fullscreen window on every monitor and fills it entirely with black. All screens remain black until the user clicks on the screen or presses `ESC`, at which point the program closes and normal display is restored.
 
 It is available in two versions:
 - Python version (`black_screen.py`):
